@@ -3,8 +3,8 @@ services:
     name: n8n
     env: docker
     ports:
-    -port: 5678
-    protcol: tcp
+      - port: 5678
+        protocol: tcp
     region: oregon # optional (defaults to oregon)
     plan: standard # optional (defaults to starter)
     branch: main # optional (defaults to master)
@@ -36,13 +36,23 @@ services:
       - key: DB_POSTGRESDB_SCHEMA
         value: public
       - key: WEBHOOK_URL
-        value: https://your-n8n-app.onrender.com/
+        value: https://n8n-tuhj.onrender.com/
       - key: N8N_ENCRYPTION_KEY
-        value: YOUR_ENCRYPTION_KEY_HERE
+        value: clave-super-secreta-123
+      - key: N8N_BASIC_AUTH_USER
+        value: admin
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: 1234
+      - key: N8N_HOST
+        value: 0.0.0.0
+      - key: N8N_PORT
+        value: 5678
+      - key: N8N_PATH
+        value: /
       - key: GENERIC_TIMEZONE
-        value: America/Sao_Paulo
+        value: America/Mexico_City
       - key: TZ
-        value: America/Sao_Paulo
+        value: America/Mexico_City
       - key: N8N_LOG_LEVEL
         value: info
       - key: EXECUTIONS_DATA_PRUNE
